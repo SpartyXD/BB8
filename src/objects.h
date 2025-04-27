@@ -12,12 +12,18 @@ struct MotorShield{
 
     MotorShield(){}
 
-    void init(int en, int pwm_A, int A1, int A2, int pwm_B, int B1, int B2, int max_speed=255){
+    void init(int en, int pwm_A, int a_1, int a_2, int pwm_B, int b_1, int b_2, int max_speed=255){
         enable_pin = en;
-        left_pwm_pin = pwm_A, left_a_pin=A1, left_b_pin=A2;
-        right_pwm_pin = pwm_B, right_a_pin=B1, right_b_pin=B2;
+        left_pwm_pin = pwm_A;
+        left_a_pin = a_1;
+        left_b_pin = a_2;
+        
+        right_pwm_pin = pwm_B;
+        right_a_pin = b_1;
+        right_b_pin = b_2;
+        
         MAX_SPEED = max_speed;
-
+        
         pinMode(enable_pin, OUTPUT);
         pinMode(left_pwm_pin, OUTPUT); pinMode(left_a_pin, OUTPUT); pinMode(left_b_pin, OUTPUT);
         pinMode(right_pwm_pin, OUTPUT); pinMode(right_a_pin, OUTPUT); pinMode(right_b_pin, OUTPUT);
