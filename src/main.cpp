@@ -1,18 +1,19 @@
 #include <Arduino.h>
+#include <bluetoothApp.h>
+#include <objects.h>
 
-// put function declarations here:
-int myFunction(int, int);
+//Globals
+MotorShield motors;
+PassiveBuzzer speaker;
 
-void setup() {
-  // put your setup code here, to run once:
-  int result = myFunction(2, 3);
+void setup(){
+  Serial.begin(115200);
+  motors.init(STNDBY_PIN, PWM_A, A1_PIN, A2_PIN, PWM_B, B1_PIN, B2_PIN);
+  speaker.init(SPK);
 }
 
-void loop() {
-  // put your main code here, to run repeatedly:
+
+void loop(){
+
 }
 
-// put function definitions here:
-int myFunction(int x, int y) {
-  return x + y;
-}
